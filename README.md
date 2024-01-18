@@ -1,6 +1,6 @@
 # MultiLayer
 <p>Transfer integral is a crucial parameter determines the charge mobility of organic semiconductors. The quantum chemical calculation of transfer integrals for all the molecular pairs in organic materials is usually an unaffordable task. Luckily this can be accelerated by the data-driven machine learning method. In this project, we develop machine learning models based on artificial neutral networks to predict transfer integrals accurately and efficiently. </p>
-<p>This project contains script files required for feature generation, feature screening, model training and transfer integral prediction for four organic semiconductor molecules</p>
+<p>This project includes script files necessary for generating features,  features filters, training models, and predicting transfer integrals for  organic semiconductor molecules quadruple thiophene with both dynamic and static disorders.</p>
 <p><strong>########## Software/Libraries Requirement ##########</strong></p>
 <ul>
 <li>Python 3.8</li>
@@ -9,7 +9,7 @@
 <li>PyTorch version 1.8.0</li>
 </ul>
 
-<p>Folder model contain scripts required for dataset generation, model training and transfer integral prediction for quadruple thiophene packing with both dynamic and static disorders</p>
+<p>Folder model contain scripts required for dataset generation, model training and transfer integral prediction for quadruple thiophene packing .</p>
 <li>data0.txt #XYZ coordinates of each atom in a molecular pair extracted from MD simulations, unit in nm</li>
 <li>ce0 #cell vectors of periodic box used in MD simulations, arranged by XX YY ZZ XY XZ YX YZ ZX ZY, unit in nm</li>
 <li>id0 #nearest neighbor list file  , serial number starting from 1</li>
