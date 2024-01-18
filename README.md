@@ -9,7 +9,7 @@
 <li>PyTorch version 1.8.0</li>
 </ul>
 
-<p>Folder model contain scripts required for dataset generation, model training and transfer integral prediction for quadruple thiophene packing .</p>
+<p>Folder contain scripts required for dataset generation, model training and transfer integral prediction for quadruple thiophene packing .</p>
 <li>data0.txt #XYZ coordinates of each atom in a molecular pair extracted from MD simulations, unit in nm</li>
 <li>ce0 #cell vectors of periodic box used in MD simulations, arranged by XX YY ZZ XY XZ YX YZ ZX ZY, unit in nm</li>
 <li>id0 #nearest neighbor list file  , serial number starting from 1</li>
