@@ -10,16 +10,16 @@
 </ul>
 
 <p>Folder contain scripts required for dataset generation, model training and transfer integral prediction for quadruple thiophene packing .</p>
-<li>data0.txt #XYZ coordinates of each atom in a molecular pair extracted from MD simulations, unit in nm</li>
-<li>ce0 #cell vectors of periodic box used in MD simulations, arranged by XX YY ZZ XY XZ YX YZ ZX ZY, unit in nm</li>
-<li>id0 #nearest neighbor list file  , serial number starting from 1</li>
-<li>elelist #PDB format file of a dimer, new structure needs to be generated in this order to ensure that scripts read the atomic order correctly.</li>
-<li>import.txt #Importance ranking obtained using the feature filtering method  </li>
-<li>make321mutil.py #Scripts to generate overlap matrix, the parameters for element specificity already included in the script. Overlap matrix elements of hydrogen atoms or intra-molecular terms will not be created.</li>
-<li>jefflod0.txt #Effective transfer integrals obtained by quantum chemical calculations and Lowdin’s orthogonalization. Units in Hartree and non-physical phase has not been corrected.</li>
-<li>makefilter.py #Scripts for feature filtering</li>
-<li>pred.py #Scripts for transfer integral prediction</li>
-<li>finetune.py #Neural network training program for fine-tuning The fine tuned model will be saved as mlplossyGPB0&90.pth, which can be called by the torch.load </li>
+<li>data0.txt #Contains the XYZ coordinates of each atom in a molecular pair extracted from MD simulations, with the unit in nm.</li>
+<li>ce0 #Contains the cell vectors of the periodic box utilized in MD simulations, structured as XX YY ZZ XY XZ YX YZ ZX ZY, with the unit in nm.</li>
+<li>id0 #A nearest neighbor list file with serial numbers starting from 1.</li>
+<li>elelist #A PDB format file of a dimer. To ensure that the scripts accurately read the atomic order, a new structure must be generated in this sequential order.</li>
+<li>import.txt #Contains the importance ranking obtained using the feature filtering method.  </li>
+<li>make321mutil.py #A script for generating the overlap matrix, wherein the parameters for element specificity are already included. Note that overlap matrix elements relating to hydrogen atoms or intra-molecular terms will not be generated.</li>
+<li>jefflod0.txt #Contains effective transfer integrals obtained via quantum chemical calculations and Lowdin’s orthogonalization. The units are in Hartree, and non-physical phases have not been corrected.</li>
+<li>makefilter.py #Script for feature filtering</li>
+<li>pred.py #Script for transfer integral prediction</li>
+<li>finetune.py #Neural network training program for fine-tuning. Tfor fine-tuning. Upon fine-tuning, the resulting model will be saved as mlplossyGPB0&90.pth. This model can be accessed by using torch.load() </li>
 
 <p><strong>########## Download Model and Dataset  ##########</strong></p>
 The dataset, pre-trained model mlp.pth and fine-tuned model mlplossyGPB0&90.pth can be downloaded at https://mega.nz/folder/emZHGISL#ibR_KAmxVn2ngmwqzUXEaQ, and use
@@ -31,7 +31,7 @@ to load the model
 
 <p><strong>########## Prediction with Models ##########</strong></p>
 <ol>
-<li>Prepare your own 3D coordinate files, lattice vector files and nearest neighbor list files according to the sample files provided, making sure that makefilter.py, make321mutil.py, id0, data0.txt, ce0 and import.txt are all placed in the same folder and the atomic order and file format are the same as those provided in the project which can be obtained by opening the elelist with a visualization program. </li>
+<li>Please perpare your own 3D coordinate files, lattice vector files, and nearest neighbor list files accordingly. Ensure that "makefilter.py," "make321mutil.py," "id0," "data0.txt," "ce0," and "import.txt" are all located within the same folder. It is important to maintain the atomic order and file format identical to those present in the project. You can verify this by opening the "elelist" file with a visualization program. </li>
 </li>
 <li>Modify make321mutil.py and makefilter.py  and run </li>
   <li>Run </li>
@@ -52,13 +52,13 @@ to load the model
   ```
   ./pred.py
   ```
-<li>Predict file will be generated</li>
+<li>Predicted transfer integral  will be generated in a file named 'predDIY'</li>
 </ol>
 
 
 <p><strong>########## Training yourself models ##########</strong></p>
 <ol>
-<li>make sure you have download the pre-trained model and dataset file, You can also generate your own dataset file form Filtered feature file and transfer integrals file by run</li>
+<li>Please ensure that you have downloaded the pre-trained model and dataset file. You can also read your own dataset file from the filtered feature file and transfer integrals file by run</li>
 
 
 
@@ -84,6 +84,7 @@ to load the model
   ```
   ./finetune.py
   ```
-  The performance of the model will be printed to the screen during training.
-Model file mlplossyGPB0&90.pth will be generated</li>
+  During the training process, the model's performance will be displayed on the screen.
+  And a model file named "mlplossyGPB0&90.pth" will be created.
+</li>
 
